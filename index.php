@@ -23,19 +23,23 @@
       print_r($resultAuthor);
       foreach($resultPost as $objPost) {
         ///////// Post ///////////
-        echo $objPost->id."<br>";
-        echo $objPost->author_id."<br>";
-        echo $objPost->title."<br>";
-        echo $objPost->body."<br>";
-        echo $objPost->image_url."<br>";
-        echo $objPost->created_at."<br><br>";
+
 
         foreach ($resultAuthor as $objAuthor) {
           if ($objPost->author_id == $objAuthor->id)
           {
             $object = (object) [
+
               'id' => $objPost->author_id,
-              'author_id' => $objAuthor->id
+              'title' => $objPost->title,
+              'body' => $objPost->body,
+              'image_url' => $objPost->image_url,
+              'create_at' => $objPost->created_at,
+              'author_id' => $objAuthor->id,
+              'name' => $objAuthor->name,
+              'role'=> $objAuthor->role,
+              'place' => $objAuthor->place,
+              'avatar_url' =>  $objAuthor->avatar_url
             ];
             array_push($postDisplay, $object);
             break;
