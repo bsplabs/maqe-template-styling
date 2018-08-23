@@ -75,7 +75,7 @@
         return false;
       }
 
-      $diff = $now - $ts; // คำนวณหาระยะที่ห่างกันว่าอยู่ในช่วง ปี เดือน วัน หรือชั่วโมง
+      $diff = $now - $ts; // Calaulate between year month day or hour
 
       $second = 1;
       $minute = 60 * $second;
@@ -102,13 +102,13 @@
         $ago = round($diff/$hour) . " hour ago";
       }
       else if($diff >= $minute) {
-        $ago = round($diff/$minute) . " นาที ที่เเล้ว";
+        $ago = round($diff/$minute) . " minute ago";
       }
       else if($diff >= 5*$second) {
-        $ago = round($diff/$year) . " วินาที ที่เเล้ว";
+        $ago = round($diff/$year) . " second ago";
       }
       else {
-        $ago = " เมื่อสักครู่";
+        $ago = " a moment ago";
       }
 
       return $ago;
