@@ -75,7 +75,7 @@
         return false;
       }
 
-      $diff = $now - $ts; // Calaulate between year month day or hour
+      $diff = $now - $ts; // Calculate difference year month day or hour
 
       $second = 1;
       $minute = 60 * $second;
